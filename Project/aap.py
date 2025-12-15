@@ -4,8 +4,8 @@ import numpy as np
 import pandas as pd
 
 # import the model
-pipe = pickle.load(open(r'\pipe.pkl','rb'))
-df = pickle.load(open(r'\df.pkl','rb'))
+pipe = pickle.load(open(r'Project/pipe.pkl','rb'))
+df = pickle.load(open(r'Project/df.pkl','rb'))
 
 
 st.title('Laptop Predictor')
@@ -69,3 +69,4 @@ if st.button('Predict Price'):
     quary = quary.reshape(1,12)
 
     st.title("The Predicted price of this -> " + str(int(np.exp(pipe.predict(quary)[0]))))
+
