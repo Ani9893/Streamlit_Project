@@ -1,5 +1,3 @@
 Streamlit
 Pandas
-pickle5
-
 Numpy
