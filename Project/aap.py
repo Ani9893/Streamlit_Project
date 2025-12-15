@@ -4,8 +4,8 @@ import numpy as np
 import pandas as pd
 
 # import the model
-pipe = pickle.load(open('pipe.pkl','rb'))
-df = pickle.load(open('df.pkl','rb'))
+pipe = pickle.load(open(r'\pipe.pkl','rb'))
+df = pickle.load(open(r'\df.pkl','rb'))
 
 
 st.title('Laptop Predictor')
@@ -67,4 +67,5 @@ if st.button('Predict Price'):
     ppi = ((X_res**2) + (Y_res**2))**0.5 / screen_size
     quary = np.array([Company,type,ram,weight,touchscreen,ips,ppi,cpu,hdd,ssd,gpu,os])
     quary = quary.reshape(1,12)
+
     st.title("The Predicted price of this -> " + str(int(np.exp(pipe.predict(quary)[0]))))
