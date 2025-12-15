@@ -1,0 +1,4 @@
+Streamlit
+Pandas
+Pickle
+Numpy
