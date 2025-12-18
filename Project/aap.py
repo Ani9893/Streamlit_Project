@@ -30,7 +30,7 @@ touchscreen = st.selectbox('Touchscreen',['Yes','No'])
 ips = st.selectbox('IPS',['Yes','No'])
 
 # screen size
-screen_size = st.number_input('Screen Size')
+screen_size = st.number_input('Screen Size', min_value=1.0, step=0.1)
 
 # Resolution
 resolution = st.selectbox('Screen_Resolution',['1920x1080','1366x768','1600x900','3840x2160',
@@ -69,4 +69,5 @@ if st.button('Predict Price'):
     quary = quary.reshape(1,12)
 
     st.title("The Predicted price of this -> " + str(int(np.exp(pipe.predict(quary)[0]))))
+
 
